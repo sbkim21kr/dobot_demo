@@ -1,3 +1,10 @@
+# commands for running scripts:
+
+cd to /dobot_demo
+uv run DobotControl2.py
+uv run teaching.py
+uv run FestoSensor.py
+
 # DobotDemoForPython64
 
 DobotDemoForPython64 is the demo of python package dynamic library files. It can be used directly by the python function to control Dobot Magician.
