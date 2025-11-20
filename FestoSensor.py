@@ -3,7 +3,10 @@ import pymcprotocol
 
 # --- PLC connection ---
 mc = pymcprotocol.Type3E()
-mc.connect("192.168.3.250", 5000)  # adjust to your PLC IP/port
+mc.connect("192.168.10.100", 5051)  # adjust to your PLC IP/port
+
+# configure the parameters of Melsec PLC including the IP address
+# run the script and turn on M100 by setting m100 to 1 in GX works2
 
 # --- Handshake helpers ---
 def first_handshake():
