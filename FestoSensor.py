@@ -114,8 +114,7 @@ def main():
             m100_val = int(mc.batchread_bitunits(headdevice="M100", readsize=1)[0])
             if m100_val == 1:
                 print("M100 detected → Begin sequence")
-                pulse_bit("M100")
-
+                
                 # --- Job1 ---
                 job1_val = run_job1()
                 if job1_val == 1:
@@ -124,7 +123,7 @@ def main():
                     pulse_bit("M200")
                     pulse_bit("Y12")   # alarm
                     reset_all_y()
-                    print("Cycle complete → please set M100=1 to start the next cycle")
+                    print("Cycle complete → M101 will stay OFF")
                     continue
 
                 # --- Job2 ---
@@ -164,9 +163,9 @@ def main():
 
 
 
-                print("Cycle complete → please set M100=1 to start the next cycle")
-                print("start the next cycle with M101")
+                print("Cycle complete → M101 will pulse ON and start the next cycle")
                 pulse_bit("M101")
+                
             else:
                 time.sleep(0.5)
 
