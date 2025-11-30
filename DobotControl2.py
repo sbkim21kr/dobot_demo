@@ -1,7 +1,7 @@
 import DobotDllType as dType
 
 api = dType.load()
-state = dType.ConnectDobot(api, "", 115200)[0]
+state = dType.ConnectDobot(api, "COM4", 115200)[0]
 print("Connection state:", state)
 
 if state == dType.DobotConnect.DobotConnect_NoError:

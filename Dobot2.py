@@ -2,7 +2,9 @@ import DobotDllType as dType
 
 # Load Dobot API
 api = dType.load()
-state = dType.ConnectDobot(api, "", 115200)[0]
+# Explicitly connect to COM4 at 115200 baud
+print("Attempting to connect to Dobot on COM4...")
+state = dType.ConnectDobot(api, "COM4", 115200)[0]
 print("Connection state:", state)
 
 if state == dType.DobotConnect.DobotConnect_NoError:
@@ -60,4 +62,4 @@ if state == dType.DobotConnect.DobotConnect_NoError:
     print("Final coordinates (X, Y, Z, R):", pose[0], pose[1], pose[2], pose[3])
 
 dType.DisconnectDobot(api)
-print("Finished path traversal.")
+print("Finished path traversal on COM4.")
